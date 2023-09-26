@@ -100,9 +100,23 @@ function rotateEnd(index) {
   isRotating = false
 
   if(index==5){
-    alert("谢谢参与!!!")
+    $.alert({
+      theme: 'modern',
+      animation: 'top',
+      closeAnimation: 'bottom',
+      title: '抽奖结果',
+      content: '<h2>谢谢参与！！！</h2>',
+      animationSpeed: 200
+  });
   }else{
-    alert("恭喜这位同学!!!获得" + consts.prizeList[index].display)
+    $.alert({
+      theme: 'modern',
+      animation: 'top',
+      closeAnimation: 'bottom',
+      title: '抽奖结果',
+      content: "<h2 style='color: #FF6633'>恭喜这位同学！！！获得"+ consts.prizeList[index].display+"</h2>",
+      animationSpeed: 200
+    })
   }
 }
 
