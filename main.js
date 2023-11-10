@@ -3,7 +3,7 @@ const prizeNum = consts.prizeList.length
 const perAngle = 360 / prizeNum
 const offsetAngle = perAngle / 2
 const circleCount = 3 //旋转圈数
-const rotateDuration = 3  // 持续时间
+const rotateDuration = 0.3  // 持续时间
 const panel = document.querySelector('.luckpanel')
 
 let isRotating = false
@@ -98,26 +98,15 @@ function rotate(index) {
 
 function rotateEnd(index) {
   isRotating = false
+  $.alert({
+    theme: 'modern',
+    animation: 'top',
+    closeAnimation: 'bottom',
+    title: '抽奖结果',
+    content: "<h2 style='color: #FF6633'>恭喜！！！获得"+ consts.prizeList[index].display+"</h2>",
+    animationSpeed: 200
+  })
 
-  if(index==5){
-    $.alert({
-      theme: 'modern',
-      animation: 'top',
-      closeAnimation: 'bottom',
-      title: '抽奖结果',
-      content: '<h2>谢谢参与！！！</h2>',
-      animationSpeed: 200
-  });
-  }else{
-    $.alert({
-      theme: 'modern',
-      animation: 'top',
-      closeAnimation: 'bottom',
-      title: '抽奖结果',
-      content: "<h2 style='color: #FF6633'>恭喜这位同学！！！获得"+ consts.prizeList[index].display+"</h2>",
-      animationSpeed: 200
-    })
-  }
 }
 
 function bindEvent() {
