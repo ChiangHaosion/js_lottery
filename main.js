@@ -3,7 +3,7 @@ const prizeNum = consts.prizeList.length
 const perAngle = 360 / prizeNum
 const offsetAngle = perAngle / 2
 const circleCount = 3 //旋转圈数
-const rotateDuration = 0.3  // 持续时间
+const rotateDuration = 0.1  // 持续时间
 const panel = document.querySelector('.luckpanel')
 
 let isRotating = false
